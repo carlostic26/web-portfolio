@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/names_dev.dart';
+import 'package:web_portfolio/config/data_dev.dart';
 import 'package:web_portfolio/config/theme.dart';
 import 'package:web_portfolio/presentation/pages/home_pages.dart';
 
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Dev.name,
-      theme: WebThemeData.themeData,
+      theme: WebThemeData
+          .themeData, //TODO: Se debe programar para cambio de tema claro/oscuro controlado por el usuario
       home: const HomePage(),
     );
   }

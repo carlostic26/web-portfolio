@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyThemeData {
-  static final ThemeData customTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+class WebThemeData {
+  static final ThemeData themeData = ThemeData(
+    primaryColor: Colors.white,
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
     useMaterial3: true,
   );
 }
