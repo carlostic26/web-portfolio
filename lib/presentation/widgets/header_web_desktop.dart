@@ -27,13 +27,13 @@ class HeaderDesktop extends StatelessWidget {
             onTap: () {},
           ),
           const Spacer(),
-          for (int i = 0; i < navTiles.length; i++)
+          for (int i = 0; i < navTitles.length; i++)
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: TextButton(
                   onPressed: () {},
                   child: Text(
-                    navTiles[i],
+                    navTitles[i],
                     style: const TextStyle(
                         fontSize: 16, color: CustomColor.whitePrimary),
                   )),
