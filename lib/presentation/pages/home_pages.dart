@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/config/constants/colors.dart';
 import 'package:web_portfolio/config/constants/nav-items.dart';
 import 'package:web_portfolio/config/constants/size.dart';
@@ -12,6 +11,7 @@ import 'package:web_portfolio/presentation/widgets/main_desktop.dart';
 import 'package:web_portfolio/presentation/widgets/main_mobile.dart';
 import 'package:web_portfolio/presentation/widgets/site_logo.dart';
 import 'package:web_portfolio/presentation/widgets/skills_desktop.dart';
+import 'package:web_portfolio/presentation/widgets/skills_mobile.dart';
 import 'package:web_portfolio/presentation/widgets/styles/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -62,10 +62,10 @@ class _HomePageState extends State<HomePage> {
                 width: screenWidth,
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 color: CustomColor.bgLight1,
-                child: Column(
+                child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text(
+                    Text(
                       'What can i do',
                       style: TextStyle(
                           fontSize: 24,
@@ -77,9 +77,11 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     //Platform and skills
-                    const SkillsDesktop(),
+                    SkillsDesktop(),
 
                     //TODO: skills for mobile
+
+                    SkillsMobile(),
                   ],
                 ),
               ),

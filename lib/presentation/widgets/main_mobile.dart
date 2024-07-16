@@ -12,7 +12,7 @@ class MainMobile extends StatelessWidget {
     final screenHeight = screenSize.height;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
+      margin: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
       height: screenHeight,
       constraints: const BoxConstraints(maxHeight: 560.0),
       child: Column(
