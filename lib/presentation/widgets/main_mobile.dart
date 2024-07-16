@@ -17,7 +17,7 @@ class MainMobile extends StatelessWidget {
       constraints: const BoxConstraints(maxHeight: 560.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           //avatar img
           ShaderMask(
@@ -29,7 +29,7 @@ class MainMobile extends StatelessWidget {
             },
             blendMode: BlendMode.srcATop,
             child: Image.asset(
-              'assets/dev_photo.png',
+              'assets/dev_profile.png',
               width: screenWidth / 2,
               height: screenHeight / 2.5,
             ),
@@ -42,7 +42,7 @@ class MainMobile extends StatelessWidget {
           //intro text
 
           Row(
-            //mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
                 "Hi!",

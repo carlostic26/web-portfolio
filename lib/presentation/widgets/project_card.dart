@@ -4,7 +4,7 @@ import 'package:web_portfolio/domain/project_utils.dart';
 import 'dart:js' as js;
 
 class ProjectCardWidget extends StatelessWidget {
-  ProjectCardWidget({
+  const ProjectCardWidget({
     super.key,
     required this.project,
   });
@@ -15,8 +15,8 @@ class ProjectCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
-      width: 250,
+      height: 290,
+      width: 260,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: CustomColor.bgLight2),
@@ -45,7 +45,7 @@ class ProjectCardWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Text(project.subtitle,
                 style: const TextStyle(
-                  fontSize: 10,
+                  fontSize: 12,
                   color: CustomColor.whiteSecondary,
                 )),
           ),

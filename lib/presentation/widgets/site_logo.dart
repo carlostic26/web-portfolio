@@ -12,7 +12,7 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Text(
-        '${Dev.name} - Flutter Developer',
+        '${Dev.name} - Flutter Dev',
         style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
