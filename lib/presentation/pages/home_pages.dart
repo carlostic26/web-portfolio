@@ -1,18 +1,13 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/config/constants/colors.dart';
-import 'package:web_portfolio/config/constants/nav-items.dart';
 import 'package:web_portfolio/config/constants/size.dart';
-import 'package:web_portfolio/config/constants/skill_items.dart';
-import 'package:web_portfolio/config/data_dev.dart';
+import 'package:web_portfolio/domain/project_utils.dart';
 import 'package:web_portfolio/presentation/widgets/drawer_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/header_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/header_web_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/main_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/main_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/site_logo.dart';
-import 'package:web_portfolio/presentation/widgets/skills_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/skills_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/styles/style.dart';
+import 'package:web_portfolio/presentation/widgets/project_card.dart';
+
+//TODO: Crear archivo de barril
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               //Main
 
-              //for web desktop visualization
+              /*     //for web desktop visualization
               if (isDesktop)
                 const HeaderDesktop()
 
@@ -62,35 +57,50 @@ class _HomePageState extends State<HomePage> {
                 width: screenWidth,
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 color: CustomColor.bgLight1,
-                child: const Column(
+                child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    const Text(
                       'What can i do',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: CustomColor.whitePrimary),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
 
                     //Platform and skills
-                    SkillsDesktop(),
-
-                    //TODO: skills for mobile
-
-                    SkillsMobile(),
+                    if (isDesktop)
+                      const SkillsDesktop()
+                    else
+                      const SkillsMobile(),
                   ],
                 ),
-              ),
+              ), */
 
               //Projects
               Container(
-                height: 500,
-                width: double.maxFinite,
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 color: CustomColor.scaffoldBg,
+                child: Column(
+                  children: [
+                    //workmprojets title
+                    const Text(
+                      'Work Projects',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary),
+                    ),
+
+                    //work project cardss
+                    //TODO: use riverpod to this case use or handle the project model
+                    ProjectCardWidget(project: workProjectUtils.first),
+                  ],
+                ),
               ),
 
               //Contact
