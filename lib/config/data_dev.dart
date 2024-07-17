@@ -3,6 +3,10 @@ class Dev {
   static String email = 'carlospenaranda26@gmail.com';
   static String urlLinkedin = '';
   static String urlGithub = '';
+  static String urlFacebook = '';
+  static String urlInstagram = '';
+  static String urlBlog = '';
+  static String flutter_version = '';
 
   //TODO: Crear mapa de proyectosPlayStore y/o repositorio github,
   //el mapa clave: valor

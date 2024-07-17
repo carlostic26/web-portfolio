@@ -56,7 +56,7 @@ class MainDesktop extends StatelessWidget {
               ],
             ),
             Image.asset(
-              'assets/dev_photo.png',
+              'assets/dev_profile.png',
               width: screenWidth / 4,
               height: screenHeight / 2,
             )

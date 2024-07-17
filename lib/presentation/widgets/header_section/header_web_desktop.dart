@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/config/constants/colors.dart';
 import 'package:web_portfolio/config/constants/nav-items.dart';
-import 'package:web_portfolio/config/data_dev.dart';
 import 'package:web_portfolio/presentation/widgets/site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+  const HeaderDesktop({super.key, required this.onNavMenuTap});
+  final Function(int) onNavMenuTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,9 @@ class HeaderDesktop extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    onNavMenuTap(i);
+                  },
                   child: Text(
                     navTitles[i],
                     style: const TextStyle(
