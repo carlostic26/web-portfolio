@@ -11,9 +11,9 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: Text(
-        '${Dev.name} - Flutter Dev',
-        style: const TextStyle(
+      child: const Text(
+        'Flutter Dev',
+        style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
             decoration: TextDecoration.underline,

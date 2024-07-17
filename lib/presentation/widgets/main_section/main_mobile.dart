@@ -30,13 +30,13 @@ class MainMobile extends StatelessWidget {
             blendMode: BlendMode.srcATop,
             child: Image.asset(
               'assets/dev_profile.png',
-              width: screenWidth / 2,
-              height: screenHeight / 2.5,
+              width: screenWidth / 1.8,
+              height: screenHeight / 3,
             ),
           ),
 
           const SizedBox(
-            height: 30.0,
+            height: 20.0,
           ),
 
           //intro text
@@ -50,7 +50,7 @@ class MainMobile extends StatelessWidget {
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                     color: CustomColor.whitePrimary,
-                    height: 1.5),
+                    height: 1.3),
               ),
               Image.asset(
                 'assets/dash.png',
@@ -64,10 +64,10 @@ class MainMobile extends StatelessWidget {
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 color: CustomColor.whitePrimary,
-                height: 1.5),
+                height: 1.3),
           ),
           const SizedBox(
-            height: 15,
+            height: 10,
           ),
           SizedBox(
             width: 190,
