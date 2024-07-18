@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                       builder: (context, snapshot) {
                         if(!snapshot.hasData){
                           return const CircularProgressIndicator();
-                        } return ProjectCardWidget(project: workProjectUtils.first); // mostrar la informarcion;
+                        } return ProjectCardWidget(project: snapshot.data!.first); // mostrar la informarcion;
                       },),
                     //work project cardss
                     //TODO: use riverpod to this case use or handle the project model
