@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/data_dev.dart';
-import 'package:web_portfolio/config/theme.dart';
-import 'package:web_portfolio/presentation/pages/home_pages.dart';
+import 'package:web_portfolio/presentation/screens.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,20 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/constants/colors.dart';
-import 'package:web_portfolio/config/constants/size.dart';
-import 'package:web_portfolio/config/data_dev.dart';
-import 'package:web_portfolio/presentation/widgets/contact_section/contact_section.dart';
-import 'package:web_portfolio/presentation/widgets/drawer_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/footer_section/footer.dart';
-import 'package:web_portfolio/presentation/widgets/header_section/header_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/header_section/header_web_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/main_section/main_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/main_section/main_mobile.dart';
-import 'package:web_portfolio/presentation/widgets/project_skill_section/projects_section.dart';
-import 'package:web_portfolio/presentation/widgets/project_skill_section/skills_desktop.dart';
-import 'package:web_portfolio/presentation/widgets/project_skill_section/skills_mobile.dart';
 import 'dart:js' as js;
 
-//TODO: Crear archivo de barril
+import 'package:web_portfolio/presentation/screens.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
