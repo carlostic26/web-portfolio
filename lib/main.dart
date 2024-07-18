@@ -1,3 +1,4 @@
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:web_portfolio/presentation/screens.dart';
 
 void main() async{

@@ -1,5 +1,6 @@
 import 'dart:js' as js;
 
+import 'package:web_portfolio/infrastructure/supabase.dart';
 import 'package:web_portfolio/presentation/screens.dart';
 
 class HomePage extends StatefulWidget {
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 30,
                 ),
-              ), 
+              //), 
 
               //Projects
               Container(
@@ -113,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     // trayendo datos de supaba
                     FutureBuilder(
-                      future: traerProyectosRealizados(), // metodo 
+                      future: bringProjectDone(), // metodo 
                       builder: (context, snapshot) {
                         if(!snapshot.hasData){
                           return Text('datos');
@@ -122,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                     //work project cardss
                     //TODO: use riverpod to this case use or handle the project model
                     ProjectCardWidget(project: workProjectUtils.first), // mostrar la informarcion
-                  ],
+                  //],
 
 
                 //Projects & Hobbies Section
@@ -147,8 +148,8 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        ),
-      );
+       // ),
+    ]) ) ));
     });
   }
 
