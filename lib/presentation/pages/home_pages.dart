@@ -117,12 +117,12 @@ class _HomePageState extends State<HomePage> {
                       future: bringProjectDone(), // metodo 
                       builder: (context, snapshot) {
                         if(!snapshot.hasData){
-                          return Text('datos');
-                        } return Text('llego datos');
+                          return const CircularProgressIndicator();
+                        } return ProjectCardWidget(project: workProjectUtils.first); // mostrar la informarcion;
                       },),
                     //work project cardss
                     //TODO: use riverpod to this case use or handle the project model
-                    ProjectCardWidget(project: workProjectUtils.first), // mostrar la informarcion
+                   // ProjectCardWidget(project: workProjectUtils.first), // mostrar la informarcion
                   //],
 
 
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 //Footer
-                Footer(),
+                 const Footer(),
               ],
             ),
           ),
