@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/constants/colors.dart';
-import 'package:web_portfolio/config/data_dev.dart';
+import 'package:web_portfolio/presentation/screens.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -56,7 +54,7 @@ class MainDesktop extends StatelessWidget {
               ],
             ),
             Image.asset(
-              'assets/dev_photo.png',
+              'assets/dev_profile.png',
               width: screenWidth / 4,
               height: screenHeight / 2,
             )

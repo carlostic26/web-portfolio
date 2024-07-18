@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:web_portfolio/config/data_dev.dart';
-import 'package:web_portfolio/config/theme.dart';
-import 'package:web_portfolio/presentation/pages/home_pages.dart';
+import 'package:web_portfolio/presentation/screens.dart';
 
 void main() async{
    WidgetsFlutterBinding.ensureInitialized();

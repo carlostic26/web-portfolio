@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/constants/colors.dart';
-import 'package:web_portfolio/domain/project_utils.dart';
 import 'dart:js' as js;
 
+import 'package:web_portfolio/presentation/screens.dart';
+
 class ProjectCardWidget extends StatelessWidget {
-  ProjectCardWidget({
+  const ProjectCardWidget({
     super.key,
     required this.project,
   });
@@ -15,7 +14,7 @@ class ProjectCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
+      height: 290,
       width: 250,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
@@ -45,7 +44,7 @@ class ProjectCardWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Text(project.subtitle,
                 style: const TextStyle(
-                  fontSize: 10,
+                  fontSize: 12,
                   color: CustomColor.whiteSecondary,
                 )),
           ),
