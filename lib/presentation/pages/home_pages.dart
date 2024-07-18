@@ -1,11 +1,17 @@
 import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/config/constants/colors.dart';
 import 'package:web_portfolio/config/constants/size.dart';
 import 'package:web_portfolio/domain/project_utils.dart';
+import 'package:web_portfolio/infrastructure/supabase.dart';
 import 'package:web_portfolio/presentation/widgets/drawer_mobile.dart';
+import 'package:web_portfolio/presentation/widgets/header_mobile.dart';
+import 'package:web_portfolio/presentation/widgets/header_web_desktop.dart';
+import 'package:web_portfolio/presentation/widgets/main_desktop.dart';
+import 'package:web_portfolio/presentation/widgets/main_mobile.dart';
 import 'package:web_portfolio/presentation/widgets/project_card.dart';
+import 'package:web_portfolio/presentation/widgets/skills_desktop.dart';
+import 'package:web_portfolio/presentation/widgets/skills_mobile.dart';
 
 //TODO: Crear archivo de barril
 
@@ -37,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               //Main
 
-              /*     //for web desktop visualization
+                 //for web desktop visualization
               if (isDesktop)
                 const HeaderDesktop()
 
@@ -78,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                       const SkillsMobile(),
                   ],
                 ),
-              ), */
+              ), 
 
               //Projects
               Container(
@@ -95,7 +101,13 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.bold,
                           color: CustomColor.whitePrimary),
                     ),
-
+                    FutureBuilder(
+                      future: traerProyectosRealizados(),
+                      builder: (context, snapshot) {
+                        if(!snapshot.hasData){
+                          return Text('datos');
+                        } return Text('llego datos');
+                      },),
                     //work project cardss
                     //TODO: use riverpod to this case use or handle the project model
                     ProjectCardWidget(project: workProjectUtils.first),
