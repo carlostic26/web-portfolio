@@ -1,5 +1,6 @@
 import 'dart:js' as js;
 
+import 'package:web_portfolio/infrastructure/supabase.dart';
 import 'package:web_portfolio/presentation/screens.dart';
 
 class HomePage extends StatefulWidget {
@@ -94,11 +95,42 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 30,
                 ),
+              //), 
+
+              //Projects
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.scaffoldBg,
+                child: Column(
+                  children: [
+                    //workmprojets title
+                    const Text(
+                      'Work Projects',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary),
+                    ),
+                    // trayendo datos de supaba
+                    FutureBuilder(
+                      future: bringProjectDone(), // metodo 
+                      builder: (context, snapshot) {
+                        if(!snapshot.hasData){
+                          return const CircularProgressIndicator();
+                        } return ProjectCardWidget(project: workProjectUtils.first); // mostrar la informarcion;
+                      },),
+                    //work project cardss
+                    //TODO: use riverpod to this case use or handle the project model
+                   // ProjectCardWidget(project: workProjectUtils.first), // mostrar la informarcion
+                  //],
+
 
                 //Projects & Hobbies Section
-                ProjectsSection(
-                  key: navbarKeys[2],
-                ),
+                // ProjectsSection(
+                //   key: navbarKeys[2],
+
+                // ),
 
                 const SizedBox(
                   height: 30,
@@ -112,12 +144,12 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 //Footer
-                Footer(),
+                 const Footer(),
               ],
             ),
           ),
-        ),
-      );
+       // ),
+    ]) ) ));
     });
   }
 
