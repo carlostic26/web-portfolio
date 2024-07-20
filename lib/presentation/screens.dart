@@ -20,7 +20,7 @@ export 'package:web_portfolio/presentation/widgets/project_skill_section/skills_
 export 'package:web_portfolio/presentation/widgets/custom_text_field.dart';
 export 'package:web_portfolio/presentation/widgets/site_logo.dart';
 export 'package:web_portfolio/presentation/widgets/styles/style.dart';
-export 'package:web_portfolio/config/constants/nav-items.dart';
+export 'package:web_portfolio/config/constants/nav_items.dart';
 export 'package:web_portfolio/domain/project_utils.dart';
 export 'package:web_portfolio/presentation/widgets/project_skill_section/project_card.dart';
 export 'package:web_portfolio/config/constants/skill_items.dart';

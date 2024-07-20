@@ -154,7 +154,7 @@ packages:
     source: hosted
     version: "1.0.8"
   custom_lint:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: custom_lint
       sha256: "7c0aec12df22f9082146c354692056677f1e70bc43471644d1fdb36c6fdda799"
@@ -545,7 +545,7 @@ packages:
     source: hosted
     version: "0.5.1"
   riverpod_lint:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: riverpod_lint
       sha256: "3c67c14ccd16f0c9d53e35ef70d06cd9d072e2fb14557326886bbde903b230a5"
