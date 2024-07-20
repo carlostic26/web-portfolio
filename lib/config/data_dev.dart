@@ -6,19 +6,9 @@ class Dev {
   static String urlFacebook = '';
   static String urlInstagram = '';
   static String urlBlog = '';
-  static String flutter_version = '';
 
-  //TODO: Crear mapa de proyectosPlayStore y/o repositorio github,
-  //el mapa clave: valor
-  //en clave el nombre del proyecto, en valor el link
-
-  /*
-
-final mapProyectosPlayStore = {
-    'WebPortfolio': 'https://github.com/portfolio',
-    'TaskFlow': 'https://github.com/portfolio',
-  };
-
-
-  */
+  static String flutterVersion = '3.22.3';
+  static String envSupabaseDbUrl = 'https://kfazkyriwrlnetfvqkcz.supabase.co';
+  static String apiKeySupabase =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmYXpreXJpd3JsbmV0ZnZxa2N6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjEzNDM5ODQsImV4cCI6MjAzNjkxOTk4NH0.uQ4tJ3QCztr6j1V1iwk4kW4cD5bNygkYaIJJAoU3dCk';
 }
