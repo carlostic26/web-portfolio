@@ -25,9 +25,10 @@ class _HomePageState extends State<HomePage> {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
 
-    return LayoutBuilder(builder: (context, constraints) {
-      bool isDesktop = constraints.maxWidth >= kMinDesktopWidth;
-      return Scaffold(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isDesktop = constraints.maxWidth >= kMinDesktopWidth;
+        return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
           endDrawer: isDesktop
@@ -39,12 +40,83 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
           body: Center(
-              child: SingleChildScrollView(
-                  controller: scrollController,
-                  scrollDirection: Axis.vertical,
-                  child: Column(children: [
-                    SizedBox(
-                      key: navbarKeys.first,
+            child: SingleChildScrollView(
+              controller: scrollController,
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  SizedBox(
+                    key: navbarKeys.first,
+                  ),
+                  //Main Section
+                  if (isDesktop)
+                    HeaderDesktop(onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    }) //for web desktop visualization
+                  else
+                    HeaderMobile(
+                      //For mobile visualization
+                      onLogoTap: () {},
+                      onMenuTap: () {
+                        scaffoldKey.currentState?.openEndDrawer();
+                      },
+                    ),
+
+                  //Skills Section
+                  if (isDesktop) const MainDesktop() else const MainMobile(),
+
+                  //Skills
+                  Container(
+                    key: navbarKeys[1],
+                    width: screenWidth,
+                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                    color: CustomColor.bgLight1,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          'What can i do',
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: CustomColor.whitePrimary),
+                        ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+
+                        //Platform and skills
+                        if (isDesktop)
+                          const SkillsDesktop()
+                        else
+                          const SkillsMobile(),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 30,
+                  ),
+
+                const SizedBox(
+                  height: 30,
+                ),
+              //), 
+
+              //Projects
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.scaffoldBg,
+                child: Column(
+                  children: [
+                    //workmprojets title
+                    const Text(
+                      'Work Projects',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary),
                     ),
                     //Main Section
                     if (isDesktop)
@@ -175,7 +247,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     // ),
-                  ]))));
+                  ]),
+                  ),
+                  ]),
+                  )));
     });
   }
 
