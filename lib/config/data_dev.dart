@@ -6,7 +6,7 @@ class Dev {
   static String urlFacebook = '';
   static String urlInstagram = '';
   static String urlBlog = '';
-  static String flutter_version = '';
+  static String flutterVersion = '';
 
   //TODO: Crear mapa de proyectosPlayStore y/o repositorio github,
   //el mapa clave: valor

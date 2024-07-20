@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
       width: double.maxFinite,
       alignment: Alignment.center,
       child: Text(
-        'Made by ${Dev.name} with Flutter ${Dev.flutter_version}',
+        'Made by ${Dev.name} with Flutter ${Dev.flutterVersion}',
         style: const TextStyle(
             fontWeight: FontWeight.w400, color: CustomColor.whiteSecondary),
       ),

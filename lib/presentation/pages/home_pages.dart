@@ -37,102 +37,104 @@ class _HomePageState extends State<HomePage> {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
 
-    return LayoutBuilder(builder: (context, constraints) {
-      bool isDesktop = constraints.maxWidth >= kMinDesktopWidth;
-      return Scaffold(
-        key: scaffoldKey,
-        backgroundColor: CustomColor.scaffoldBg,
-        endDrawer: isDesktop
-            ? null
-            : DrawerMobile(
-                onNavItemTap: (int navIndex) {
-                  scaffoldKey.currentState?.closeEndDrawer();
-                  scrollToSection(navIndex);
-                },
-              ),
-        body: Center(
-          child: SingleChildScrollView(
-            controller: scrollController,
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                SizedBox(
-                  key: navbarKeys.first,
-                ),
-                //Main Section
-                if (isDesktop)
-                  HeaderDesktop(onNavMenuTap: (int navIndex) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isDesktop = constraints.maxWidth >= kMinDesktopWidth;
+        return Scaffold(
+          key: scaffoldKey,
+          backgroundColor: CustomColor.scaffoldBg,
+          endDrawer: isDesktop
+              ? null
+              : DrawerMobile(
+                  onNavItemTap: (int navIndex) {
+                    scaffoldKey.currentState?.closeEndDrawer();
                     scrollToSection(navIndex);
-                  }) //for web desktop visualization
-                else
-                  HeaderMobile(
-                    //For mobile visualization
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState?.openEndDrawer();
-                    },
+                  },
+                ),
+          body: Center(
+            child: SingleChildScrollView(
+              controller: scrollController,
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  SizedBox(
+                    key: navbarKeys.first,
+                  ),
+                  //Main Section
+                  if (isDesktop)
+                    HeaderDesktop(onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    }) //for web desktop visualization
+                  else
+                    HeaderMobile(
+                      //For mobile visualization
+                      onLogoTap: () {},
+                      onMenuTap: () {
+                        scaffoldKey.currentState?.openEndDrawer();
+                      },
+                    ),
+
+                  //Skills Section
+                  if (isDesktop) const MainDesktop() else const MainMobile(),
+
+                  //Skills
+                  Container(
+                    key: navbarKeys[1],
+                    width: screenWidth,
+                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                    color: CustomColor.bgLight1,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          'What can i do',
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: CustomColor.whitePrimary),
+                        ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+
+                        //Platform and skills
+                        if (isDesktop)
+                          const SkillsDesktop()
+                        else
+                          const SkillsMobile(),
+                      ],
+                    ),
                   ),
 
-                //Skills Section
-                if (isDesktop) const MainDesktop() else const MainMobile(),
-
-                //Skills
-                Container(
-                  key: navbarKeys[1],
-                  width: screenWidth,
-                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                  color: CustomColor.bgLight1,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'What can i do',
-                        style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrimary),
-                      ),
-                      const SizedBox(
-                        height: 50,
-                      ),
-
-                      //Platform and skills
-                      if (isDesktop)
-                        const SkillsDesktop()
-                      else
-                        const SkillsMobile(),
-                    ],
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
 
-                const SizedBox(
-                  height: 30,
-                ),
+                  //Projects & Hobbies Section
+                  ProjectsSection(
+                    key: navbarKeys[2],
+                  ),
 
-                //Projects & Hobbies Section
-                ProjectsSection(
-                  key: navbarKeys[2],
-                ),
+                  const SizedBox(
+                    height: 30,
+                  ),
 
-                const SizedBox(
-                  height: 30,
-                ),
+                  //Contact
+                  ContactSection(key: navbarKeys[3]),
 
-                //Contact
-                ContactSection(key: navbarKeys[3]),
+                  const SizedBox(
+                    height: 30,
+                  ),
 
-                const SizedBox(
-                  height: 30,
-                ),
-
-                //Footer
-                Footer(),
-              ],
+                  //Footer
+                  const Footer(),
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
   void scrollToSection(int navIndex) {
