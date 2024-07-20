@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:web_portfolio/config/constants/colors.dart';
-import 'package:web_portfolio/config/constants/nav_items.dart';
-import 'package:web_portfolio/presentation/widgets/site_logo.dart';
+import 'package:web_portfolio/presentation/screens.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key, required this.onNavMenuTap});
