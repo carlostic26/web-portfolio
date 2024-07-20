@@ -123,7 +123,7 @@ class ContactSection extends StatelessWidget {
   }
 
   Row buildNameEmailFieldDesktop() {
-    return Row(
+    return const Row(
       children: [
         Flexible(
           child: CustomTextField(
@@ -143,7 +143,7 @@ class ContactSection extends StatelessWidget {
   }
 
   Column buildNameEmailFieldMobile() {
-    return Column(
+    return const Column(
       children: [
         Flexible(
           child: CustomTextField(
