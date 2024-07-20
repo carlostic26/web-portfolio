@@ -1,14 +1,17 @@
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:web_portfolio/presentation/screens.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'features/shared/infrastructure/services/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Supabase.initialize(
-    url: Dev.envSupabaseDbUrl,
-    anonKey: Dev.apiKeySupabase,
+  await ServiceLocator.initialize();
+
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
   );
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
