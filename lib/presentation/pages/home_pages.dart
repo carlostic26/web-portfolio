@@ -28,18 +28,18 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       bool isDesktop = constraints.maxWidth >= kMinDesktopWidth;
       return Scaffold(
-          key: scaffoldKey,
-          backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: isDesktop
-              ? null
-              : DrawerMobile(
-                  onNavItemTap: (int navIndex) {
-                    scaffoldKey.currentState?.closeEndDrawer();
-                    scrollToSection(navIndex);
-                  },
-                ),
-          body: Center(
-              child: SingleChildScrollView(
+        key: scaffoldKey,
+        backgroundColor: CustomColor.scaffoldBg,
+        endDrawer: isDesktop
+            ? null
+            : DrawerMobile(
+                onNavItemTap: (int navIndex) {
+                  scaffoldKey.currentState?.closeEndDrawer();
+                  scrollToSection(navIndex);
+                },
+              ),
+        body: Center(
+          child: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
             child: Column(children: [
@@ -102,84 +102,6 @@ class _HomePageState extends State<HomePage> {
                 width: screenWidth,
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 color: CustomColor.scaffoldBg,
-                child: Column(children: [
-                  //workmprojets title
-                  const Text(
-                    'Work Projects',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary),
-                  ),
-                  //Main Section
-                  if (isDesktop)
-                    HeaderDesktop(onNavMenuTap: (int navIndex) {
-                      scrollToSection(navIndex);
-                    }) //for web desktop visualization
-                  else
-                    HeaderMobile(
-                      //For mobile visualization
-                      onLogoTap: () {},
-                      onMenuTap: () {
-                        scaffoldKey.currentState?.openEndDrawer();
-                      },
-                    ),
-
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  SizedBox(
-                    width: screenWidth,
-                    height: screenSize.height * 0.50,
-                    child: FutureBuilder(
-                      future: bringProjectDone(), // metodo
-                      builder: (context, snapshot) {
-                        if (!snapshot.hasData) {
-                          return const CircularProgressIndicator();
-                        }
-                        return Scrollbar(
-                          controller: sCProject,
-                          child: ListView.builder(
-                            controller: sCProject,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: snapshot.data!.length,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
-                                child: ProjectCardWidget(
-                                    project: snapshot.data![index]),
-                              );
-                            },
-                          ),
-                        );
-
-                        // ProjectCardWidget(project: snapshot.data!.first); // mostrar la informarcion;
-                      },
-                    ),
-                  ),
-
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  //Contact
-                  ContactSection(key: navbarKeys[3]),
-
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  //Footer
-                  const Footer(),
-                ]),
-              ),
-
-              //Projects
-              /*     Container(
-                width: screenWidth,
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                color: CustomColor.scaffoldBg,
                 child: Column(
                   children: [
                     //workmprojets title
@@ -194,18 +116,36 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    // trayendo datos de supaba
-                   
-                    //work project cardss
-                    //TODO: use riverpod to this case use or handle the project model
-                    // ProjectCardWidget(project: workProjectUtils.first), // mostrar la informarcion
-                    //],
 
-                    //Projects & Hobbies Section
-                    // ProjectsSection(
-                    //   key: navbarKeys[2],
+                    SizedBox(
+                      width: screenWidth,
+                      height: screenSize.height * 0.50,
+                      child: FutureBuilder(
+                        future: bringProjectDone(), // metodo
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            return const CircularProgressIndicator();
+                          }
+                          return Scrollbar(
+                            controller: sCProject,
+                            child: ListView.builder(
+                              controller: sCProject,
+                              scrollDirection: Axis.horizontal,
+                              itemCount: snapshot.data!.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(left: 10.0),
+                                  child: ProjectCardWidget(
+                                      project: snapshot.data![index]),
+                                );
+                              },
+                            ),
+                          );
 
-                    // ),
+                          // ProjectCardWidget(project: snapshot.data!.first); // mostrar la informarcion;
+                        },
+                      ),
+                    ),
 
                     const SizedBox(
                       height: 30,
@@ -223,9 +163,10 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-             */
             ]),
-          )));
+          ),
+        ),
+      );
     });
   }
 
