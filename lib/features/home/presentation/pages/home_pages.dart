@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:web_portfolio/features/home/infrastructure/supabase.dart';
 import 'package:web_portfolio/features/home/presentation/providers/providers.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'package:web_portfolio/features/shared/shared.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -137,11 +138,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                           child: FutureBuilder(
                             future: bringProjectDone(),
                             builder: (context, snapshot) {
-                              if (!snapshot.hasData) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
-                                );
-                              }
+                              if (!snapshot.hasData) const CustomLoading();
                               return Scrollbar(
                                 controller: sCProject,
                                 child: ListView.builder(
