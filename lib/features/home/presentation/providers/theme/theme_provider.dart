@@ -7,4 +7,8 @@ final themeProvider = StateNotifierProvider<ThemeNotifier, WebThemeData>((ref) {
 
 class ThemeNotifier extends StateNotifier<WebThemeData> {
   ThemeNotifier() : super(WebThemeData());
+
+  void toggleTheme() {
+    state = state.copyWith(isDark: !state.isDark);
+  }
 }
