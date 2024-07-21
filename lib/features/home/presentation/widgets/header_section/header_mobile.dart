@@ -10,7 +10,7 @@ class HeaderMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
+      margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
       decoration:
           kHeaderDecoration, //es el style separado dentro de la carpeta widgets
       child: Row(

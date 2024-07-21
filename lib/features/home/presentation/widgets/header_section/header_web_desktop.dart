@@ -8,14 +8,12 @@ class HeaderDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      margin: const EdgeInsets.symmetric(
-        vertical: 10.0,
-        horizontal: 20.0,
-      ),
+      margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
       width: double.maxFinite,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-            colors: [Colors.transparent, CustomColor.bgLight1]),
+          colors: [Colors.transparent, CustomColor.bgLight1],
+        ),
         borderRadius: BorderRadius.circular(100),
       ),
       child: Row(

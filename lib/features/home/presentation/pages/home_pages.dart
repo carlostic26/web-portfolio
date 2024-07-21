@@ -65,15 +65,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                                 },
                               ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20.0),
-                        child: IconButton(
-                          onPressed:
-                              ref.read(themeProvider.notifier).toggleTheme,
-                          icon: ref.watch(themeProvider).isDark
-                              ? const Icon(Icons.brightness_7)
-                              : const Icon(Icons.brightness_4),
-                        ),
+                      IconButton(
+                        onPressed: ref.read(themeProvider.notifier).toggleTheme,
+                        icon: ref.watch(themeProvider).isDark
+                            ? const Icon(Icons.brightness_7)
+                            : const Icon(Icons.brightness_4),
                       ),
                     ],
                   ),
