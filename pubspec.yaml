@@ -1,35 +1,35 @@
 name: web_portfolio
 description: "A new Flutter project."
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.4.3 <4.0.0"
 
 dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  supabase_flutter: ^2.5.8
-  flutter_riverpod: ^2.5.1
   flutter_dotenv: ^5.1.0
-  
+  flutter_riverpod: ^2.5.1
+  get_it: ^7.7.0
+  supabase_flutter: ^2.5.8
 
 dev_dependencies:
-  riverpod_lint: ^2.3.10
-  custom_lint: 
+  custom_lint: null
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  riverpod_lint: ^2.3.10
 
 flutter:
-
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - assets/
     - assets/icons/
     - assets/projects/

@@ -1,26 +1,29 @@
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:web_portfolio/presentation/screens.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'features/home/presentation/providers/providers.dart';
+import 'features/shared/infrastructure/services/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Supabase.initialize(
-    url: Dev.envSupabaseDbUrl,
-    anonKey: Dev.apiKeySupabase,
+  await ServiceLocator.initialize();
+
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
   );
-  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Dev.name,
-      theme: WebThemeData
-          .themeData, //TODO: Se debe programar para cambio de tema claro/oscuro controlado por el usuario
+      theme: ref.watch(themeProvider).theme,
       home: const HomePage(),
     );
   }
