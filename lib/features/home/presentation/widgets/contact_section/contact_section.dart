@@ -80,8 +80,14 @@ class ContactSection extends StatelessWidget {
               onTap: () {
                 js.context.callMethod("open", [Dev.urlLinkedin]);
               },
-              child: Image.asset(
+              child: /* Image.asset(
                 "assets/icons/linkedin.png",
+                width: 28,
+                color: Colors.white,
+              ), */
+
+                  Image.network(
+                Dev.iconLinkedin,
                 width: 28,
                 color: Colors.white,
               ),
@@ -90,8 +96,14 @@ class ContactSection extends StatelessWidget {
               onTap: () {
                 js.context.callMethod("open", [Dev.urlFacebook]);
               },
-              child: Image.asset(
+              child: /*  Image.asset(
                 "assets/icons/facebook.png",
+                width: 28,
+                color: Colors.white,
+              ), */
+
+                  Image.network(
+                Dev.iconFacebook,
                 width: 28,
                 color: Colors.white,
               ),
@@ -100,8 +112,14 @@ class ContactSection extends StatelessWidget {
               onTap: () {
                 js.context.callMethod("open", [Dev.urlInstagram]);
               },
-              child: Image.asset(
+              child: /* Image.asset(
                 "assets/icons/instagram.png",
+                width: 28,
+                color: Colors.white,
+              ), */
+
+                  Image.network(
+                Dev.iconInstagram,
                 width: 28,
                 color: Colors.white,
               ),
@@ -110,8 +128,8 @@ class ContactSection extends StatelessWidget {
               onTap: () {
                 js.context.callMethod("open", [Dev.urlGithub]);
               },
-              child: Image.asset(
-                "assets/icons/github.png",
+              child: Image.network(
+                Dev.iconGithub,
                 width: 28,
                 color: Colors.white,
               ),

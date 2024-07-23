@@ -22,7 +22,11 @@ class SkillsDesktop extends StatelessWidget {
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20.0, vertical: 10.0),
-                    leading: Image.asset(
+                    /* leading: Image.asset(
+                      platformItems[i]["img"],
+                      width: 26.0,
+                    ), */
+                    leading: Image.network(
                       platformItems[i]["img"],
                       width: 26.0,
                     ),
@@ -52,7 +56,7 @@ class SkillsDesktop extends StatelessWidget {
                       ),
                       backgroundColor: CustomColor.bgLight2,
                       label: Text(skillItems[i]["title"]),
-                      avatar: Image.asset(skillItems[i]["img"]))
+                      avatar: Image.network(skillItems[i]["img"]))
               ],
             ),
           ),

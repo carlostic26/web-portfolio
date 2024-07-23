@@ -1,7 +1,8 @@
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  const MainMobile({super.key, required this.onContactTap});
+  final Function(int) onContactTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,14 @@ class MainMobile extends StatelessWidget {
               ]).createShader(bounds);
             },
             blendMode: BlendMode.srcATop,
-            child: Image.asset(
+            child: /* Image.asset(
               'assets/dev_profile.png',
+              width: screenWidth / 1.8,
+              height: screenHeight / 3,
+            ), */
+
+                Image.network(
+              Dev.urlImgDev,
               width: screenWidth / 1.8,
               height: screenHeight / 3,
             ),
@@ -50,8 +57,13 @@ class MainMobile extends StatelessWidget {
                     color: CustomColor.whitePrimary,
                     height: 1.3),
               ),
-              Image.asset(
+              /*   Image.asset(
                 'assets/dash.png',
+                width: screenWidth / 10,
+              ),
+ */
+              Image.network(
+                Dev.urlImgDash,
                 width: screenWidth / 10,
               ),
             ],
@@ -70,7 +82,10 @@ class MainMobile extends StatelessWidget {
           SizedBox(
             width: 190,
             child: ElevatedButton(
-                onPressed: () {}, child: const Text("Get in Touch")),
+                onPressed: () {
+                  onContactTap(3);
+                },
+                child: const Text("Get in Touch")),
           ),
         ],
       ),

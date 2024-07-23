@@ -1,7 +1,8 @@
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({super.key, required this.onContactTap});
+  final Function(int) onContactTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,12 @@ class MainDesktop extends StatelessWidget {
                           color: CustomColor.whitePrimary,
                           height: 1.5),
                     ),
-                    Image.asset(
+                    /*       Image.asset(
                       'assets/dash.png',
+                      width: screenWidth / 19,
+                    ), */
+                    Image.network(
+                      Dev.urlImgDash,
                       width: screenWidth / 19,
                     ),
                   ],
@@ -49,15 +54,24 @@ class MainDesktop extends StatelessWidget {
                 SizedBox(
                   width: 200,
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text("Get in Touch")),
+                      onPressed: () {
+                        onContactTap(3);
+                      },
+                      child: const Text("Get in Touch")),
                 ),
               ],
             ),
-            Image.asset(
+/*             Image.asset(
               'assets/dev_profile.png',
               width: screenWidth / 4,
               height: screenHeight / 2,
             )
+ */
+            Image.network(
+              Dev.urlImgDev,
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+            ),
           ],
         ));
   }

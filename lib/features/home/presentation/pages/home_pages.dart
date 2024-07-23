@@ -13,10 +13,6 @@ class HomePage extends ConsumerStatefulWidget {
   ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-//TODO: Pregunta: este proyecto usa "controlers" para ciertas cosas, como el textfield,
-// y como la linea 34 acontinucacion. Esto debe o no existir si usamos clean architecture?
-// o es irrelevante
-
 class _HomePageState extends ConsumerState<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
@@ -48,8 +44,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  //Main Section
-
+                  //Header Section
                   Row(
                     children: [
                       Expanded(
@@ -76,7 +71,18 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
 
                   //Main Section
-                  if (isDesktop) const MainDesktop() else const MainMobile(),
+                  if (isDesktop)
+                    MainDesktop(
+                      onContactTap: (int section) {
+                        scrollToSection(section);
+                      },
+                    )
+                  else
+                    MainMobile(
+                      onContactTap: (int section) {
+                        scrollToSection(section);
+                      },
+                    ),
 
                   //Skills
                   Container(
