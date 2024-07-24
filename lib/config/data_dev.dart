@@ -26,5 +26,5 @@ class Dev {
       'https://kfazkyriwrlnetfvqkcz.supabase.co/storage/v1/object/sign/images/image-icons/github.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvaW1hZ2UtaWNvbnMvZ2l0aHViLnBuZyIsImlhdCI6MTcyMTc0NjcxOSwiZXhwIjoyMDM3MTA2NzE5fQ.dDLfS7kLmvJZzAFW27Po6oiq9LLIzi9Hh1kQPD70Qo4&t=2024-07-23T14%3A58%3A39.225Z';
 
   //Flutter actual version
-  static String flutterVersion = '3.2.1';
+  static String flutterVersion = '3.22.3';
 }
