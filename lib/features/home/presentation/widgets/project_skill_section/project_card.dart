@@ -24,7 +24,7 @@ class ProjectCardWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           //Project Image
-          Image.asset(project.image,
+          Image.network(project.image,
               height: 140, width: 250, fit: BoxFit.cover),
 
           //Title

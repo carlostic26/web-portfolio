@@ -1,3 +1,4 @@
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class MainDesktop extends StatelessWidget {
@@ -35,13 +36,13 @@ class MainDesktop extends StatelessWidget {
                       width: screenWidth / 19,
                     ), */
                     Image.network(
-                      Dev.urlImgDash,
+                      Enviroment.urlImgDash,
                       width: screenWidth / 19,
                     ),
                   ],
                 ),
                 Text(
-                  "I'm ${Dev.name} \nA Flutter Developer",
+                  "I'm ${Enviroment.name} \nA Flutter Developer",
                   style: const TextStyle(
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
@@ -68,7 +69,7 @@ class MainDesktop extends StatelessWidget {
             )
  */
             Image.network(
-              Dev.urlImgDev,
+              Enviroment.urlImg,
               width: screenWidth / 4,
               height: screenHeight / 2,
             ),

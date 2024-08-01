@@ -1,5 +1,6 @@
 import 'dart:js' as js;
 
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class ContactSection extends StatelessWidget {
@@ -78,7 +79,7 @@ class ContactSection extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlLinkedin]);
+                js.context.callMethod("open", [Enviroment.urlLinkedin]);
               },
               child: /* Image.asset(
                 "assets/icons/linkedin.png",
@@ -87,14 +88,14 @@ class ContactSection extends StatelessWidget {
               ), */
 
                   Image.network(
-                Dev.iconLinkedin,
+                Enviroment.iconLinkedin,
                 width: 28,
                 color: Colors.white,
               ),
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlFacebook]);
+                js.context.callMethod("open", [Enviroment.urlFacebook]);
               },
               child: /*  Image.asset(
                 "assets/icons/facebook.png",
@@ -103,14 +104,14 @@ class ContactSection extends StatelessWidget {
               ), */
 
                   Image.network(
-                Dev.iconFacebook,
+                Enviroment.iconFacebook,
                 width: 28,
                 color: Colors.white,
               ),
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlInstagram]);
+                js.context.callMethod("open", [Enviroment.urlInstagram]);
               },
               child: /* Image.asset(
                 "assets/icons/instagram.png",
@@ -119,17 +120,17 @@ class ContactSection extends StatelessWidget {
               ), */
 
                   Image.network(
-                Dev.iconInstagram,
+                Enviroment.iconInstagram,
                 width: 28,
                 color: Colors.white,
               ),
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlGithub]);
+                js.context.callMethod("open", [Enviroment.urlGithub]);
               },
               child: Image.network(
-                Dev.iconGithub,
+                Enviroment.iconGithub,
                 width: 28,
                 color: Colors.white,
               ),

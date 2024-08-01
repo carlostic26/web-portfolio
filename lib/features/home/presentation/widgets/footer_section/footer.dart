@@ -1,3 +1,4 @@
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class Footer extends StatelessWidget {
@@ -10,7 +11,7 @@ class Footer extends StatelessWidget {
       width: double.maxFinite,
       alignment: Alignment.center,
       child: Text(
-        'Made by ${Dev.name} with Flutter ${Dev.flutterVersion}',
+        'Made by ${Enviroment.name} with Flutter ${Enviroment.flutterVersion}',
         style: const TextStyle(
             fontWeight: FontWeight.w400, color: CustomColor.whiteSecondary),
       ),

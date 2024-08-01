@@ -1,3 +1,4 @@
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class MainMobile extends StatelessWidget {
@@ -34,7 +35,7 @@ class MainMobile extends StatelessWidget {
             ), */
 
                 Image.network(
-              Dev.urlImgDev,
+              Enviroment.urlImg,
               width: screenWidth / 1.8,
               height: screenHeight / 3,
             ),
@@ -63,13 +64,13 @@ class MainMobile extends StatelessWidget {
               ),
  */
               Image.network(
-                Dev.urlImgDash,
+                Enviroment.urlImgDash,
                 width: screenWidth / 10,
               ),
             ],
           ),
           Text(
-            "I'm ${Dev.name} \nA Flutter Developer",
+            "I'm ${Enviroment.name} \nA Flutter Developer",
             style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,

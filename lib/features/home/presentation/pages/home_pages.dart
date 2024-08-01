@@ -1,6 +1,7 @@
 import 'dart:js' as js;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/infrastructure/supabase.dart';
 import 'package:web_portfolio/features/home/presentation/providers/providers.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
@@ -195,7 +196,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   void scrollToSection(int navIndex) {
     if (navIndex == 4) {
       //open blog page
-      js.context.callMethod("open", [Dev.urlBlog]);
+      js.context.callMethod("open", [Enviroment.urlBlog]);
 
       return;
     }
