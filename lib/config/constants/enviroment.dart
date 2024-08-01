@@ -4,23 +4,19 @@ class Enviroment {
   static String envSupabaseDbUrl = dotenv.env['envSupabaseDbUrl'] ?? 'no-url';
   static String apiKeySupabase = dotenv.env['apiKeySupabase'] ?? 'no-key ';
 
-  static String name = dotenv.env['nameDev'] ?? 'Name Developer';
-  static String email = dotenv.env['emailDev'] ?? 'Name Developer';
-  static String urlLinkedin = dotenv.env['urlLinkedinDev'] ?? 'URL linkedin';
-  static String urlGithub = dotenv.env['urlGithubDev'] ?? 'Name Developer';
-  static String urlFacebook = dotenv.env[' urlFacebookDev'] ?? 'Name Developer';
-  static String urlInstagram =
-      dotenv.env['urlInstagramDev'] ?? 'Name Developer';
-  static String urlBlog = dotenv.env['urlBlogDev'] ?? 'Name Developer';
-  static String urlImg = dotenv.env['urlImgDevDev'] ?? 'Name Developer';
-  static String urlImgDash = dotenv.env['urlImgDashDev'] ?? 'Name Developer';
-  static String iconFacebook =
-      dotenv.env['iconFacebookDev'] ?? 'Name Developer';
-  static String iconInstagram =
-      dotenv.env['iconInstagramDev'] ?? 'Name Developer';
-  static String iconLinkedin =
-      dotenv.env['iconLinkedinDev'] ?? 'Name Developer';
-  static String iconGithub = dotenv.env['iconGithubDev'] ?? 'Name Developer';
+  static String name = dotenv.env['name'] ?? 'Name Developer';
+  static String email = dotenv.env['email'] ?? 'Name Developer';
+  static String urlLinkedin = dotenv.env['urlLinkedin'] ?? 'URL linkedin';
+  static String urlGithub = dotenv.env['urlGithub'] ?? 'Name Developer';
+  static String urlFacebook = dotenv.env[' urlFacebook'] ?? 'Name Developer';
+  static String urlInstagram = dotenv.env['urlInstagram'] ?? 'Name Developer';
+  static String urlBlog = dotenv.env['urlBlog'] ?? 'Name Developer';
+  static String urlImg = dotenv.env['urlImg'] ?? 'Name Developer';
+  static String urlImgDash = dotenv.env['urlImgDash'] ?? 'Name Developer';
+  static String iconFacebook = dotenv.env['iconFacebook'] ?? 'Name Developer';
+  static String iconInstagram = dotenv.env['iconInstagram'] ?? 'Name Developer';
+  static String iconLinkedin = dotenv.env['iconLinkedin'] ?? 'Name Developer';
+  static String iconGithub = dotenv.env['iconGithub'] ?? 'Name Developer';
   static String flutterVersion =
-      dotenv.env['flutterVersionDev'] ?? 'Name Developer';
+      dotenv.env['flutterVersion'] ?? 'Name Developer';
 }

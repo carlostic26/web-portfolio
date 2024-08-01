@@ -1,7 +1,7 @@
-import 'dart:js' as js;
-
 import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/open_url.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/service_locator.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -79,7 +79,10 @@ class ContactSection extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Enviroment.urlLinkedin]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlLinkedin);
+                //js.context.callMethod("open", [Enviroment.urlLinkedin]);
               },
               child: /* Image.asset(
                 "assets/icons/linkedin.png",
@@ -95,7 +98,9 @@ class ContactSection extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Enviroment.urlFacebook]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlFacebook);
               },
               child: /*  Image.asset(
                 "assets/icons/facebook.png",
@@ -111,7 +116,9 @@ class ContactSection extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Enviroment.urlInstagram]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlInstagram);
               },
               child: /* Image.asset(
                 "assets/icons/instagram.png",
@@ -127,7 +134,9 @@ class ContactSection extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Enviroment.urlGithub]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlGithub);
               },
               child: Image.network(
                 Enviroment.iconGithub,
