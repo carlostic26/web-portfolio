@@ -48,8 +48,8 @@ class SkillsMobile extends StatelessWidget {
                     horizontal: 16.0,
                   ),
                   backgroundColor: CustomColor.bgLight2,
-                  label: Text(skillItems[i]["title"]),
-                  avatar: Image.network(skillItems[i]["img"]))
+                  label: Text(skillItems[i]["title"]!),
+                  avatar: Image.network(skillItems[i]["img"]!))
           ],
         ),
       ],
