@@ -16,6 +16,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   get_it: ^7.7.0
   supabase_flutter: ^2.5.8
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   custom_lint: null

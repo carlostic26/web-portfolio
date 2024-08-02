@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 import 'features/home/presentation/providers/providers.dart';
 import 'features/shared/infrastructure/services/service_locator.dart';
@@ -22,7 +23,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: Dev.name,
+      title: Enviroment.name,
       theme: ref.watch(themeProvider).theme,
       home: const HomePage(),
     );

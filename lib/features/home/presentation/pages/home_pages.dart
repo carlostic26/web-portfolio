@@ -1,9 +1,10 @@
-import 'dart:js' as js;
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/infrastructure/supabase.dart';
 import 'package:web_portfolio/features/home/presentation/providers/providers.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/open_url.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/service_locator.dart';
 import 'package:web_portfolio/features/shared/shared.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -12,10 +13,6 @@ class HomePage extends ConsumerStatefulWidget {
   @override
   ConsumerState<HomePage> createState() => _HomePageState();
 }
-
-//TODO: Pregunta: este proyecto usa "controlers" para ciertas cosas, como el textfield,
-// y como la linea 34 acontinucacion. Esto debe o no existir si usamos clean architecture?
-// o es irrelevante
 
 class _HomePageState extends ConsumerState<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -48,8 +45,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  //Main Section
-
+                  //Header Section
                   Row(
                     children: [
                       Expanded(
@@ -76,7 +72,18 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
 
                   //Main Section
-                  if (isDesktop) const MainDesktop() else const MainMobile(),
+                  if (isDesktop)
+                    MainDesktop(
+                      onContactTap: (int section) {
+                        scrollToSection(section);
+                      },
+                    )
+                  else
+                    MainMobile(
+                      onContactTap: (int section) {
+                        scrollToSection(section);
+                      },
+                    ),
 
                   //Skills
                   Container(
@@ -189,7 +196,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   void scrollToSection(int navIndex) {
     if (navIndex == 4) {
       //open blog page
-      js.context.callMethod("open", [Dev.urlBlog]);
+      ServiceLocator.sl.get<OpenUrl>().openUrl(url: Enviroment.urlBlog);
 
       return;
     }

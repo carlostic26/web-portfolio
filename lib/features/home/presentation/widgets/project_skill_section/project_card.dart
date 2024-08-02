@@ -1,6 +1,7 @@
-import 'dart:js' as js;
-
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/open_url.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/service_locator.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget({
@@ -24,7 +25,7 @@ class ProjectCardWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           //Project Image
-          Image.asset(project.image,
+          Image.network(project.image,
               height: 140, width: 250, fit: BoxFit.cover),
 
           //Title
@@ -68,7 +69,9 @@ class ProjectCardWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 6),
                     child: InkWell(
                       onTap: () {
-                        js.context.callMethod("open", [project.androidLink]);
+                        ServiceLocator.sl.get<OpenUrl>().openUrl(
+                            url: project.androidLink ?? 'project.androidLink');
+                        //js.context.callMethod("open", [project.androidLink]);
                       },
                       child: Image.asset(
                         'assets/icons/android.png',
@@ -81,7 +84,9 @@ class ProjectCardWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 6),
                     child: InkWell(
                       onTap: () {
-                        js.context.callMethod("open", [project.githubLink]);
+                        ServiceLocator.sl
+                            .get<OpenUrl>()
+                            .openUrl(url: Enviroment.urlLinkedin);
                       },
                       child: Image.asset(
                         color: Colors.white,

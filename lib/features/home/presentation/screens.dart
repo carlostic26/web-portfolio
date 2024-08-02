@@ -2,7 +2,6 @@
 export 'package:flutter/material.dart';
 
 // Flutter team packages
-export 'package:web_portfolio/config/data_dev.dart';
 export 'package:web_portfolio/config/theme/theme.dart';
 export 'package:web_portfolio/features/home/presentation/pages/home_pages.dart';
 export 'package:web_portfolio/config/constants/colors.dart';

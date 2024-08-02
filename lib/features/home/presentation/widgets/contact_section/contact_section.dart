@@ -1,6 +1,7 @@
-import 'dart:js' as js;
-
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/open_url.dart';
+import 'package:web_portfolio/features/shared/infrastructure/services/service_locator.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -78,40 +79,67 @@ class ContactSection extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlLinkedin]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlLinkedin);
+                //js.context.callMethod("open", [Enviroment.urlLinkedin]);
               },
-              child: Image.asset(
+              child: /* Image.asset(
                 "assets/icons/linkedin.png",
                 width: 28,
                 color: Colors.white,
+              ), */
+
+                  Image.network(
+                Enviroment.iconLinkedin,
+                width: 28,
+                color: Colors.white,
               ),
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlFacebook]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlFacebook);
               },
-              child: Image.asset(
+              child: /*  Image.asset(
                 "assets/icons/facebook.png",
                 width: 28,
                 color: Colors.white,
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                js.context.callMethod("open", [Dev.urlInstagram]);
-              },
-              child: Image.asset(
-                "assets/icons/instagram.png",
+              ), */
+
+                  Image.network(
+                Enviroment.iconFacebook,
                 width: 28,
                 color: Colors.white,
               ),
             ),
             InkWell(
               onTap: () {
-                js.context.callMethod("open", [Dev.urlGithub]);
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlInstagram);
               },
-              child: Image.asset(
-                "assets/icons/github.png",
+              child: /* Image.asset(
+                "assets/icons/instagram.png",
+                width: 28,
+                color: Colors.white,
+              ), */
+
+                  Image.network(
+                Enviroment.iconInstagram,
+                width: 28,
+                color: Colors.white,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                ServiceLocator.sl
+                    .get<OpenUrl>()
+                    .openUrl(url: Enviroment.urlGithub);
+              },
+              child: Image.network(
+                Enviroment.iconGithub,
                 width: 28,
                 color: Colors.white,
               ),

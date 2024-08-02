@@ -1,7 +1,9 @@
+import 'package:web_portfolio/config/constants/enviroment.dart';
 import 'package:web_portfolio/features/home/presentation/screens.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({super.key, required this.onContactTap});
+  final Function(int) onContactTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +31,18 @@ class MainDesktop extends StatelessWidget {
                           color: CustomColor.whitePrimary,
                           height: 1.5),
                     ),
-                    Image.asset(
+                    /*       Image.asset(
                       'assets/dash.png',
+                      width: screenWidth / 19,
+                    ), */
+                    Image.network(
+                      Enviroment.urlImgDash,
                       width: screenWidth / 19,
                     ),
                   ],
                 ),
                 Text(
-                  "I'm ${Dev.name} \nA Flutter Developer",
+                  "I'm ${Enviroment.name} \nA Flutter Developer",
                   style: const TextStyle(
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
@@ -49,15 +55,24 @@ class MainDesktop extends StatelessWidget {
                 SizedBox(
                   width: 200,
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text("Get in Touch")),
+                      onPressed: () {
+                        onContactTap(3);
+                      },
+                      child: const Text("Get in Touch")),
                 ),
               ],
             ),
-            Image.asset(
+/*             Image.asset(
               'assets/dev_profile.png',
               width: screenWidth / 4,
               height: screenHeight / 2,
             )
+ */
+            Image.network(
+              Enviroment.urlImg,
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+            ),
           ],
         ));
   }
