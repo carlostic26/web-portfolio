@@ -23,10 +23,10 @@ class SkillsMobile extends StatelessWidget {
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20.0, vertical: 10.0),
                     leading: Image.network(
-                      platformItems[i]["img"],
+                      platformItems[i]["imgIcon"]!,
                       width: 26.0,
                     ),
-                    title: Text(platformItems[i]["title"]),
+                    title: Text(platformItems[i]["title"]!),
                   )),
           ]),
         ),
@@ -41,15 +41,15 @@ class SkillsMobile extends StatelessWidget {
           spacing: 10.0,
           runSpacing: 10.0,
           children: [
-            for (int i = 0; i < skillItems.length; i++)
+            for (int i = 0; i < technolyItems.length; i++)
               Chip(
                   padding: const EdgeInsets.symmetric(
                     vertical: 12.0,
                     horizontal: 16.0,
                   ),
                   backgroundColor: CustomColor.bgLight2,
-                  label: Text(skillItems[i]["title"]!),
-                  avatar: Image.network(skillItems[i]["img"]!))
+                  label: Text(technolyItems[i]["title"]!),
+                  avatar: Image.network(technolyItems[i]["imgIcon"]!))
           ],
         ),
       ],

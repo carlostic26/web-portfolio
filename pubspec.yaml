@@ -17,6 +17,7 @@ dependencies:
   get_it: ^7.7.0
   supabase_flutter: ^2.5.8
   url_launcher: ^6.3.0
+  cached_network_image: ^3.2.0
 
 dev_dependencies:
   custom_lint: null
@@ -34,3 +35,4 @@ flutter:
     - assets/
     - assets/icons/
     - assets/projects/
+    - assets/backgroundImage/

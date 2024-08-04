@@ -85,10 +85,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                       },
                     ),
 
-                  //Skills
+                  //Skills Section
                   Container(
                     key: navbarKeys[1],
                     width: screenWidth,
+                    height: 400,
                     padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                     color: CustomColor.bgLight1,
                     child: Column(
