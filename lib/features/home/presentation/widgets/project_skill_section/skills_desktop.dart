@@ -14,14 +14,48 @@ class SkillsDesktop extends StatelessWidget {
         //platforms
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 450),
-          child: Wrap(spacing: 5.0, runSpacing: 5.0, children: [
-            for (int i = 0; i < platformItems.length; i++)
-              HoverChipPlatforms(
-                title: platformItems[i]["title"]!,
-                iconUrl: platformItems[i]["imgIcon"]!,
-                backgroundImgUrl: platformItems[i]["imgBackground"]!,
-              )
-          ]),
+          child: Column(children: [
+            Row(children: [
+              SizedBox(
+                width: 200,
+                height: 180,
+                child: Container(
+                  width: 120,
+                  height: 100,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey),
+                ),
+              ),
+               SizedBox(
+                width: 200,
+                height: 180,
+                 child: Container(
+                  width: 120,
+                  height: 100,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey),
+                               ),
+               ),
+              
+            ],),
+             Row(children: [
+              SizedBox(
+                child: Container(
+                  width: 120,
+                  height: 100,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey),
+                ),
+              ),
+               Container(
+                width: 120,
+                height: 100,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                color: Colors.grey),
+              ),
+              
+            ],),
+          ],)
         ),
 
         const SizedBox(
